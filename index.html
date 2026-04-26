@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GELATÒ • Sorvete Artesanal Gourmet</title>
+    <title>GELATÒ • Curso de Sorvete Artesanal</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,500;1,700&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -55,11 +55,6 @@
             color: var(--text-dark);
             line-height: 1.6;
             overflow-x: hidden;
-            cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28'><circle cx='14' cy='14' r='10' fill='%23FF6B4A' opacity='0.9'/><circle cx='14' cy='10' r='3' fill='%23FF4444'/><text x='14' y='19' text-anchor='middle' font-size='7' fill='white'>🍒</text></svg>") 14 14, auto;
-        }
-
-        body:active {
-            cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28'><circle cx='14' cy='14' r='9' fill='%23E85B3A' opacity='0.9'/><circle cx='14' cy='10' r='2.5' fill='%23cc3333'/><text x='14' y='18' text-anchor='middle' font-size='6' fill='white'>🍒</text></svg>") 12 12, auto;
         }
 
         a,
@@ -68,84 +63,7 @@
         select,
         [role="button"],
         .clickable {
-            cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'><circle cx='15' cy='15' r='11' fill='%23FF6B4A' opacity='0.95'/><circle cx='15' cy='11' r='3.5' fill='%23FF4444'/><text x='15' y='20' text-anchor='middle' font-size='7' fill='white'>🍒</text></svg>") 15 15, pointer;
-        }
-
-        /* PRELOADER */
-        #preloader {
-            position: fixed;
-            inset: 0;
-            z-index: 99999;
-            background: radial-gradient(ellipse at center, #FFF9F0 0%, #FFE0C8 60%, #FF6B4A 100%);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            transition: transform 0.7s cubic-bezier(0.7, 0, 0.3, 1), opacity 0.5s ease;
-            will-change: transform;
-        }
-        #preloader.hidden {
-            transform: translateY(-100%);
-            opacity: 0;
-            pointer-events: none;
-        }
-        #preloader .cone-svg {
-            width: 120px;
-            height: 140px;
-        }
-        #preloader .cone-svg .stroke-path {
-            stroke-dasharray: 400;
-            stroke-dashoffset: 400;
-            animation: drawCone 1.2s ease forwards;
-        }
-        #preloader .scoop-circle {
-            transform-origin: center center;
-            transform: scale(0);
-            animation: popScoop 0.7s 0.9s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
-        }
-        @keyframes drawCone {
-            to {
-                stroke-dashoffset: 0;
-            }
-        }
-        @keyframes popScoop {
-            0% {
-                transform: scale(0);
-            }
-            70% {
-                transform: scale(1.2);
-            }
-            100% {
-                transform: scale(1);
-            }
-        }
-        .preloader-text {
-            margin-top: 20px;
-            font-family: var(--font-body);
-            font-size: 1.1rem;
-            color: var(--secondary);
-            letter-spacing: 0.04em;
-            min-height: 28px;
-            display: flex;
-            align-items: center;
-            gap: 2px;
-        }
-        .preloader-text .cursor-blink {
-            display: inline-block;
-            width: 2px;
-            height: 1.2em;
-            background: var(--primary);
-            animation: blink 0.7s infinite;
-            margin-left: 2px;
-        }
-        @keyframes blink {
-            0%,
-            100% {
-                opacity: 1;
-            }
-            50% {
-                opacity: 0;
-            }
+            cursor: pointer;
         }
 
         /* HEADER */
@@ -159,12 +77,11 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background: rgba(255, 249, 240, 0.8);
+            background: rgba(255, 249, 240, 0.85);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border-bottom: 1px solid rgba(255, 107, 74, 0.15);
             transition: padding 0.35s ease, background 0.35s ease, box-shadow 0.35s ease;
-            will-change: padding, background;
         }
         #site-header.scrolled {
             padding: 10px 40px;
@@ -208,7 +125,6 @@
             position: relative;
             padding: 4px 0;
             transition: color var(--transition);
-            font-family: var(--font-body);
         }
         .nav-links a::after {
             content: '';
@@ -252,56 +168,10 @@
             transform: scale(1.05);
             box-shadow: 0 10px 28px rgba(255, 107, 74, 0.45);
         }
-        .cart-icon {
-            position: relative;
+        .user-icon {
             font-size: 1.5rem;
             background: none;
             border: none;
-            color: var(--text-dark);
-            transition: transform var(--spring);
-        }
-        .cart-icon:active {
-            transform: scale(0.9);
-        }
-        .cart-count {
-            position: absolute;
-            top: -6px;
-            right: -8px;
-            background: var(--primary);
-            color: #fff;
-            border-radius: 50%;
-            width: 20px;
-            height: 20px;
-            font-size: 0.7rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-family: var(--font-accent);
-            animation: none;
-        }
-        .cart-count.bump {
-            animation: bumpCart 0.4s ease;
-        }
-        @keyframes bumpCart {
-            0%,
-            100% {
-                transform: scale(1);
-            }
-            30% {
-                transform: scale(1.5);
-            }
-            60% {
-                transform: scale(0.85);
-            }
-        }
-
-        /* MOBILE NAV */
-        .hamburger {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.8rem;
             color: var(--text-dark);
         }
         @media (max-width: 900px) {
@@ -320,6 +190,13 @@
             .header-cta {
                 padding: 9px 16px;
             }
+        }
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            color: var(--text-dark);
         }
 
         /* HERO */
@@ -357,7 +234,6 @@
             font-weight: 600;
             margin-bottom: 20px;
             border: 1px solid rgba(45, 106, 79, 0.2);
-            font-family: var(--font-body);
         }
         .hero-title {
             font-family: var(--font-title);
@@ -395,22 +271,11 @@
             max-width: 480px;
             line-height: 1.7;
         }
-        @media (max-width: 900px) {
-            .hero-subtitle {
-                max-width: 100%;
-                margin: 0 auto 28px;
-            }
-        }
         .hero-buttons {
             display: flex;
             gap: 14px;
             flex-wrap: wrap;
             margin-bottom: 28px;
-        }
-        @media (max-width: 900px) {
-            .hero-buttons {
-                justify-content: center;
-            }
         }
         .btn-primary {
             background: var(--primary);
@@ -425,7 +290,6 @@
             box-shadow: var(--shadow-primary);
             text-decoration: none;
             display: inline-block;
-            letter-spacing: 0.01em;
         }
         .btn-primary:hover {
             background: var(--primary-dark);
@@ -440,7 +304,6 @@
             border-radius: 50px;
             font-weight: 600;
             font-size: 1rem;
-            font-family: var(--font-body);
             transition: all var(--transition);
             text-decoration: none;
             display: inline-block;
@@ -470,11 +333,6 @@
             align-items: center;
             gap: 12px;
             flex-wrap: wrap;
-        }
-        @media (max-width: 900px) {
-            .social-proof {
-                justify-content: center;
-            }
         }
         .avatars {
             display: flex;
@@ -527,14 +385,6 @@
                 transform: translateY(-8px);
             }
         }
-        .hero-icecream .glass {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-end;
-        }
         .hero-icecream .scoop-stack {
             display: flex;
             flex-direction: column;
@@ -563,7 +413,7 @@
             z-index: 1;
             margin-top: -28px;
         }
-        .hero-icecream .cone-triangle {
+        .cone-triangle {
             width: 0;
             height: 0;
             border-left: 45px solid transparent;
@@ -580,41 +430,6 @@
             animation: orbit 6s linear infinite;
             pointer-events: none;
             opacity: 0.7;
-        }
-        .particle:nth-child(1) {
-            top: 10%;
-            left: 5%;
-            animation-delay: 0s;
-            animation-duration: 7s;
-        }
-        .particle:nth-child(2) {
-            top: 50%;
-            right: 8%;
-            animation-delay: -2s;
-            animation-duration: 6s;
-        }
-        .particle:nth-child(3) {
-            bottom: 15%;
-            left: 12%;
-            animation-delay: -4s;
-            animation-duration: 8s;
-        }
-        @keyframes orbit {
-            0% {
-                transform: translate(0, 0) rotate(0deg) scale(1);
-            }
-            25% {
-                transform: translate(30px, -20px) rotate(90deg) scale(1.3);
-            }
-            50% {
-                transform: translate(0px, -40px) rotate(180deg) scale(1);
-            }
-            75% {
-                transform: translate(-30px, -20px) rotate(270deg) scale(1.3);
-            }
-            100% {
-                transform: translate(0, 0) rotate(360deg) scale(1);
-            }
         }
         .chocolate-wave {
             position: absolute;
@@ -681,7 +496,6 @@
             font-weight: 700;
             color: var(--secondary);
             margin-bottom: 8px;
-            letter-spacing: -0.01em;
         }
         .section-underline {
             display: flex;
@@ -697,20 +511,11 @@
             background: var(--primary);
             border-radius: 4px;
         }
-        .section-underline .spoon-icon {
-            font-size: 1.4rem;
-        }
 
-        /* MENU TABS */
-        #menu-section {
+        /* PROGRAMA */
+        #programa {
             padding: 80px 40px;
-            position: relative;
             background: var(--bg);
-        }
-        @media (max-width: 768px) {
-            #menu-section {
-                padding: 50px 16px;
-            }
         }
         .tab-nav {
             display: flex;
@@ -725,7 +530,6 @@
             border: 2px solid #e0d5cc;
             background: transparent;
             font-weight: 600;
-            font-family: var(--font-body);
             color: var(--text-gray);
             cursor: pointer;
             transition: all var(--transition);
@@ -736,10 +540,6 @@
             color: #fff;
             border-color: var(--primary);
             box-shadow: var(--shadow-primary);
-        }
-        .tab-btn:hover:not(.active) {
-            border-color: var(--primary);
-            color: var(--primary);
         }
         .product-grid {
             display: grid;
@@ -753,45 +553,16 @@
             border-radius: var(--radius-lg);
             padding: 28px 20px 24px;
             text-align: center;
-            position: relative;
             transition: all var(--transition);
             box-shadow: var(--shadow-sm);
-            transform-style: preserve-3d;
-            perspective: 800px;
         }
         .product-card:hover {
             transform: translateY(-8px);
             box-shadow: var(--shadow-lg);
         }
-        .product-card .badge-bestseller {
-            position: absolute;
-            top: 16px;
-            left: 16px;
-            background: #ff4757;
-            color: #fff;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            transform: rotate(-6deg);
-            box-shadow: 0 3px 10px rgba(255, 70, 80, 0.3);
-            z-index: 2;
-            font-family: var(--font-accent);
-        }
         .product-img {
-            width: 150px;
-            height: 150px;
-            margin: 0 auto 16px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             font-size: 5rem;
-            transition: transform 0.5s ease;
-            filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.12));
-        }
-        .product-card:hover .product-img {
-            transform: rotateY(10deg) rotateX(5deg) scale(1.06);
+            margin-bottom: 16px;
         }
         .product-name {
             font-family: var(--font-title);
@@ -805,60 +576,6 @@
             color: var(--text-gray);
             margin-bottom: 14px;
         }
-        .size-selector {
-            display: flex;
-            gap: 8px;
-            justify-content: center;
-            margin-bottom: 14px;
-            flex-wrap: wrap;
-        }
-        .size-pill {
-            padding: 7px 14px;
-            border-radius: 50px;
-            border: 1.5px solid #e0d5cc;
-            background: #fff;
-            font-size: 0.8rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all var(--transition);
-            font-family: var(--font-accent);
-        }
-        .size-pill.selected {
-            background: var(--primary);
-            color: #fff;
-            border-color: var(--primary);
-        }
-        .product-price {
-            font-family: var(--font-accent);
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--chocolate);
-            margin-bottom: 14px;
-        }
-        .btn-add-cart {
-            background: var(--green);
-            color: #fff;
-            border: none;
-            padding: 11px 24px;
-            border-radius: 50px;
-            font-weight: 600;
-            font-family: var(--font-body);
-            cursor: pointer;
-            transition: all var(--transition);
-            font-size: 0.9rem;
-            box-shadow: var(--shadow-green);
-        }
-        .btn-add-cart:hover {
-            background: #236840;
-            transform: scale(1.06);
-            box-shadow: 0 8px 24px rgba(45, 106, 79, 0.4);
-        }
-        .confetti-burst {
-            position: absolute;
-            pointer-events: none;
-            top: 50%;
-            left: 50%;
-        }
 
         /* ASSINATURA */
         #assinatura {
@@ -866,11 +583,6 @@
             background: #fffefb;
             background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L35 20 L50 20 L38 30 L42 45 L30 36 L18 45 L22 30 L10 20 L25 20 Z' fill='%23f0e0d0' opacity='0.25'/%3E%3C/svg%3E");
             background-size: 80px 80px;
-        }
-        @media (max-width: 768px) {
-            #assinatura {
-                padding: 50px 16px;
-            }
         }
         .plan-grid {
             display: grid;
@@ -886,21 +598,14 @@
             text-align: center;
             box-shadow: var(--shadow-sm);
             transition: all var(--transition);
-            position: relative;
             border: 2px solid transparent;
+            position: relative;
         }
         .plan-card.featured {
             border: 3px solid var(--primary);
             box-shadow: var(--shadow-lg);
             transform: scale(1.03);
             z-index: 2;
-        }
-        .plan-card:hover {
-            transform: translateY(-6px);
-            box-shadow: var(--shadow-lg);
-        }
-        .plan-card.featured:hover {
-            transform: scale(1.03) translateY(-6px);
         }
         .popular-badge {
             position: absolute;
@@ -912,32 +617,7 @@
             padding: 7px 20px;
             border-radius: 50px;
             font-weight: 700;
-            font-size: 0.85rem;
             box-shadow: var(--shadow-primary);
-            white-space: nowrap;
-            font-family: var(--font-accent);
-        }
-        .plan-icon {
-            font-size: 3.5rem;
-            margin-bottom: 12px;
-        }
-        .plan-name {
-            font-family: var(--font-title);
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: var(--secondary);
-            margin-bottom: 8px;
-        }
-        .plan-benefits {
-            list-style: none;
-            text-align: left;
-            padding: 0;
-            margin: 16px 0;
-        }
-        .plan-benefits li {
-            padding: 6px 0;
-            font-size: 0.9rem;
-            color: var(--text-gray);
         }
         .plan-price {
             font-family: var(--font-accent);
@@ -945,12 +625,6 @@
             font-weight: 700;
             color: var(--chocolate);
             margin: 12px 0;
-        }
-        .plan-price .old-price {
-            text-decoration: line-through;
-            font-size: 1rem;
-            color: #b0a49a;
-            margin-left: 6px;
         }
         .btn-plan {
             background: var(--primary);
@@ -960,396 +634,14 @@
             border-radius: 50px;
             font-weight: 700;
             cursor: pointer;
-            font-family: var(--font-body);
-            transition: all var(--transition);
             width: 100%;
             font-size: 1rem;
             box-shadow: var(--shadow-primary);
+            transition: all var(--transition);
         }
         .btn-plan:hover {
             background: var(--primary-dark);
             transform: scale(1.04);
-        }
-        .toggle-plan {
-            display: flex;
-            justify-content: center;
-            gap: 16px;
-            margin-bottom: 30px;
-            align-items: center;
-            font-weight: 600;
-        }
-        .toggle-switch {
-            width: 56px;
-            height: 28px;
-            background: #e0d5cc;
-            border-radius: 50px;
-            position: relative;
-            cursor: pointer;
-            transition: background var(--transition);
-        }
-        .toggle-switch.active {
-            background: var(--primary);
-        }
-        .toggle-switch::after {
-            content: '';
-            position: absolute;
-            width: 22px;
-            height: 22px;
-            background: #fff;
-            border-radius: 50%;
-            top: 3px;
-            left: 3px;
-            transition: left var(--transition);
-        }
-        .toggle-switch.active::after {
-            left: 31px;
-        }
-
-        /* STEPS */
-        #como-funciona {
-            padding: 80px 40px;
-            background: var(--bg);
-        }
-        @media (max-width: 768px) {
-            #como-funciona {
-                padding: 50px 16px;
-            }
-        }
-        .steps-line {
-            display: flex;
-            gap: 30px;
-            max-width: 1000px;
-            margin: 0 auto;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        .step {
-            flex: 1 1 200px;
-            text-align: center;
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.7s ease;
-        }
-        .step.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .step-icon {
-            font-size: 3rem;
-            margin-bottom: 12px;
-        }
-        .step h4 {
-            font-family: var(--font-title);
-            font-size: 1.1rem;
-            color: var(--secondary);
-            margin-bottom: 4px;
-        }
-        .step p {
-            font-size: 0.85rem;
-            color: var(--text-gray);
-        }
-
-        /* WALL OF LOVE */
-        #wall-of-love {
-            padding: 80px 40px;
-            background: #fffefb;
-        }
-        @media (max-width: 768px) {
-            #wall-of-love {
-                padding: 50px 16px;
-            }
-        }
-        .masonry-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-            gap: 20px;
-            max-width: 1000px;
-            margin: 0 auto 40px;
-        }
-        .masonry-item {
-            border-radius: var(--radius-md);
-            overflow: hidden;
-            box-shadow: var(--shadow-sm);
-            transition: all var(--transition);
-            position: relative;
-            background: #faf5ef;
-            aspect-ratio: 1/1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-        }
-        .masonry-item:hover {
-            transform: scale(1.04);
-            box-shadow: var(--shadow-lg);
-        }
-        .masonry-item .overlay-text {
-            position: absolute;
-            inset: 0;
-            background: rgba(62, 39, 35, 0.7);
-            color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 16px;
-            font-size: 0.85rem;
-            opacity: 0;
-            transition: opacity var(--transition);
-            text-align: center;
-            border-radius: var(--radius-md);
-        }
-        .masonry-item:hover .overlay-text {
-            opacity: 1;
-        }
-        .testimonial-carousel {
-            display: flex;
-            gap: 20px;
-            overflow-x: auto;
-            padding: 10px 0;
-            max-width: 1000px;
-            margin: 0 auto;
-            scroll-snap-type: x mandatory;
-            -webkit-overflow-scrolling: touch;
-        }
-        .testimonial-card {
-            min-width: 280px;
-            background: #fff;
-            border-radius: var(--radius-lg);
-            padding: 24px;
-            box-shadow: var(--shadow-sm);
-            scroll-snap-align: start;
-            flex-shrink: 0;
-        }
-        .testimonial-card .quote {
-            font-style: italic;
-            color: var(--text-dark);
-            margin-bottom: 10px;
-            font-size: 0.95rem;
-        }
-        .testimonial-card .author {
-            font-weight: 700;
-            color: var(--secondary);
-        }
-
-        /* HISTORIA */
-        #nossa-historia {
-            padding: 80px 40px;
-            background: var(--bg);
-            display: flex;
-            gap: 40px;
-            max-width: 1100px;
-            margin: 0 auto;
-            flex-wrap: wrap;
-            align-items: center;
-        }
-        @media (max-width: 768px) {
-            #nossa-historia {
-                padding: 50px 16px;
-                flex-direction: column;
-            }
-        }
-        .historia-img {
-            flex: 1 1 300px;
-            aspect-ratio: 1/1;
-            background: #f5e6d8;
-            border-radius: var(--radius-lg);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 8rem;
-            box-shadow: var(--shadow-md);
-            transform: rotate(-3deg);
-            border: 6px solid #fff;
-        }
-        .historia-text {
-            flex: 1 1 300px;
-        }
-        .historia-text h3 {
-            font-family: var(--font-title);
-            font-size: 2rem;
-            color: var(--secondary);
-            margin-bottom: 12px;
-        }
-        .historia-text p {
-            color: var(--text-gray);
-            line-height: 1.8;
-            margin-bottom: 16px;
-        }
-
-        /* FAQ */
-        #faq {
-            padding: 80px 40px;
-            background: #fffefb;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        @media (max-width: 768px) {
-            #faq {
-                padding: 50px 16px;
-            }
-        }
-        .faq-item {
-            border-bottom: 1px solid #e8ddd3;
-            padding: 16px 0;
-            cursor: pointer;
-            transition: all var(--transition);
-        }
-        .faq-question {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-weight: 600;
-            font-size: 1rem;
-            color: var(--text-dark);
-            gap: 12px;
-        }
-        .faq-icon {
-            font-size: 1.3rem;
-            transition: transform var(--spring);
-            color: var(--primary);
-            min-width: 24px;
-            text-align: center;
-        }
-        .faq-item.open .faq-icon {
-            transform: rotate(45deg);
-        }
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.5s ease, padding 0.3s ease;
-            color: var(--text-gray);
-            font-size: 0.9rem;
-        }
-        .faq-item.open .faq-answer {
-            max-height: 200px;
-            padding-top: 10px;
-        }
-
-        /* URGENCY BAR */
-        #urgency-bar {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: var(--chocolate);
-            color: #FFF9F0;
-            padding: 12px 24px;
-            z-index: 999;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 16px;
-            flex-wrap: wrap;
-            text-align: center;
-            transform: translateY(100%);
-            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            font-weight: 500;
-            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.2);
-        }
-        #urgency-bar.visible {
-            transform: translateY(0);
-        }
-        #urgency-bar .close-urgency {
-            background: none;
-            border: none;
-            color: #fff;
-            font-size: 1.3rem;
-            cursor: pointer;
-            padding: 4px 8px;
-            border-radius: 50%;
-            transition: background var(--transition);
-        }
-        #urgency-bar .close-urgency:hover {
-            background: rgba(255, 255, 255, 0.15);
-        }
-        .urgency-cta {
-            background: var(--primary);
-            color: #fff;
-            border: none;
-            padding: 9px 20px;
-            border-radius: 50px;
-            font-weight: 700;
-            cursor: pointer;
-            font-family: var(--font-body);
-            animation: pulse 1.8s infinite;
-            font-size: 0.9rem;
-        }
-        @keyframes pulse {
-            0%,
-            100% {
-                box-shadow: 0 0 0 0 rgba(255, 107, 74, 0.6);
-            }
-            50% {
-                box-shadow: 0 0 0 16px rgba(255, 107, 74, 0);
-            }
-        }
-        #countdown {
-            font-family: var(--font-accent);
-            font-weight: 700;
-            letter-spacing: 0.04em;
-        }
-
-        /* NEWSLETTER */
-        #newsletter {
-            padding: 80px 40px;
-            background: linear-gradient(135deg, #FF6B4A 0%, #c0392b 100%);
-            text-align: center;
-            color: #fff;
-            position: relative;
-            clip-path: ellipse(120% 100% at 50% 0%);
-        }
-        @media (max-width: 768px) {
-            #newsletter {
-                padding: 60px 20px;
-                clip-path: ellipse(160% 100% at 50% 0%);
-            }
-        }
-        #newsletter h3 {
-            font-family: var(--font-title);
-            font-size: 2rem;
-            margin-bottom: 10px;
-        }
-        #newsletter p {
-            margin-bottom: 20px;
-            opacity: 0.9;
-        }
-        .newsletter-form {
-            display: flex;
-            gap: 10px;
-            max-width: 500px;
-            margin: 0 auto;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        .newsletter-form input {
-            flex: 1 1 250px;
-            padding: 14px 20px;
-            border-radius: 50px;
-            border: 2px solid #fff;
-            background: rgba(255, 255, 255, 0.2);
-            color: #fff;
-            font-size: 1rem;
-            font-family: var(--font-body);
-            outline: none;
-        }
-        .newsletter-form input::placeholder {
-            color: rgba(255, 255, 255, 0.7);
-        }
-        .newsletter-form button {
-            padding: 14px 28px;
-            border-radius: 50px;
-            border: none;
-            background: #fff;
-            color: var(--primary);
-            font-weight: 700;
-            cursor: pointer;
-            font-family: var(--font-body);
-            transition: all var(--transition);
-            font-size: 1rem;
-        }
-        .newsletter-form button:hover {
-            background: var(--chocolate);
-            color: #fff;
         }
 
         /* FOOTER */
@@ -1361,16 +653,10 @@
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 30px;
         }
-        @media (max-width: 768px) {
-            #site-footer {
-                padding: 40px 20px 30px;
-            }
-        }
         #site-footer h4 {
             font-family: var(--font-title);
             color: #fff;
             margin-bottom: 12px;
-            font-size: 1.1rem;
         }
         #site-footer a {
             color: #c0b0a0;
@@ -1390,113 +676,46 @@
             color: #a09080;
             font-size: 0.85rem;
         }
-
-        /* BACK TO TOP */
-        #back-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            background: var(--primary);
-            color: #fff;
-            border: none;
-            font-size: 1.4rem;
-            cursor: pointer;
-            z-index: 998;
-            box-shadow: var(--shadow-primary);
-            transition: all var(--spring);
-            opacity: 0;
-            pointer-events: none;
-            transform: translateY(20px);
-        }
-        #back-to-top.visible {
-            opacity: 1;
-            pointer-events: auto;
-            transform: translateY(0);
-        }
-        #back-to-top:hover {
-            transform: scale(1.15) translateY(-4px);
-            background: var(--primary-dark);
-        }
-
-        /* RESPONSIVE */
-        @media (max-width: 600px) {
-            .hero-right {
-                min-height: 280px;
-            }
-            .hero-icecream {
-                width: 220px;
-                height: 300px;
-            }
-            .hero-icecream .scoop {
-                width: 100px;
-                height: 85px;
-            }
-            .hero-icecream .cone-triangle {
-                border-left-width: 32px;
-                border-right-width: 32px;
-                border-top-width: 65px;
-            }
-        }
     </style>
 </head>
 <body>
-
-    <!-- PRELOADER -->
-    <div id="preloader">
-        <svg class="cone-svg" viewBox="0 0 120 140" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path class="stroke-path" d="M60 20 L95 110 L25 110 Z" stroke="#d4a574" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle class="scoop-circle" cx="60" cy="28" r="26" fill="#FF6B4A" opacity="0.9"/>
-            <circle class="scoop-circle" cx="48" cy="18" r="8" fill="#fff" opacity="0.35"/>
-        </svg>
-        <div class="preloader-text" id="preloader-text"></div>
-    </div>
-
-    <!-- HEADER -->
     <header id="site-header">
         <a href="#" class="logo"><span class="logo-icon">🍦</span>GELATÒ</a>
         <ul class="nav-links">
-            <li><a href="#menu-section">Sabores</a></li>
+            <li><a href="#programa">Programa</a></li>
             <li><a href="#como-funciona">Como Funciona</a></li>
-            <li><a href="#assinatura">Assinar</a></li>
+            <li><a href="#assinatura">Planos</a></li>
             <li><a href="#nossa-historia">Nossa História</a></li>
         </ul>
         <div class="header-actions">
-            <button class="cart-icon" aria-label="Carrinho" onclick="bumpCart()">🛒<span class="cart-count" id="cart-count-display">0</span></button>
-            <a href="#menu-section" class="header-cta">Peça seu Kit Degustação</a>
-            <button class="hamburger" aria-label="Menu">☰</button>
+            <button class="user-icon" title="Área do Aluno">👤</button>
+            <a href="#assinatura" class="header-cta">Inscreva-se</a>
+            <button class="hamburger">☰</button>
         </div>
     </header>
 
-    <!-- HERO -->
     <section id="hero">
         <div class="hero-left">
-            <div class="hero-badge">🍦 Artesanal • Natural</div>
-            <h1 class="hero-title">O sorvete que <span class="highlight">derrete</span> antes no seu coração.</h1>
-            <p class="hero-subtitle">Ingredientes selecionados, zero conservantes e entregas congeladas na sua porta em menos de 90 minutos.</p>
+            <div class="hero-badge">🍦 Curso Online • Ao Vivo</div>
+            <h1 class="hero-title">Aprenda a fazer sorvete que <span class="highlight">derrete</span> corações.</h1>
+            <p class="hero-subtitle">Do zero ao pote: técnicas italianas, ingredientes naturais e os segredos dos mestres. Aulas gravadas + 3 workshops ao vivo.</p>
             <div class="hero-buttons">
-                <a href="#menu-section" class="btn-primary">Comprar Sorvetes Agora</a>
-                <a href="#menu-section" class="btn-outline">Ver Cardápio Completo</a>
+                <a href="#assinatura" class="btn-primary">Quero me Inscrever</a>
+                <a href="#programa" class="btn-outline">Ver Programa Completo</a>
             </div>
             <div class="social-proof">
-                <div class="avatars">
-                    <span>😊</span><span>😋</span><span>🥰</span>
-                </div>
-                <span class="stars-text">⭐ 4.9 · +12.000 potes entregues com amor</span>
+                <div class="avatars"><span>😊</span><span>😋</span><span>🥰</span></div>
+                <span class="stars-text">⭐ 4.9 · +2.000 alunos formados</span>
             </div>
         </div>
         <div class="hero-right">
             <div class="hero-icecream">
-                <div class="glass">
-                    <div class="scoop-stack">
-                        <div class="scoop scoop-1"></div>
-                        <div class="scoop scoop-2"></div>
-                        <div class="scoop scoop-3"></div>
-                    </div>
-                    <div class="cone-triangle"></div>
+                <div class="scoop-stack">
+                    <div class="scoop scoop-1"></div>
+                    <div class="scoop scoop-2"></div>
+                    <div class="scoop scoop-3"></div>
                 </div>
+                <div class="cone-triangle"></div>
                 <span class="particle" style="top:8%;left:2%;">🍊</span>
                 <span class="particle" style="top:45%;right:4%;">🫐</span>
                 <span class="particle" style="bottom:20%;left:8%;">💧</span>
@@ -1507,427 +726,176 @@
         </div>
     </section>
 
-    <!-- TRUST BAR -->
     <section id="trust-bar">
-        <div class="trust-item"><div class="trust-icon">🥛</div><div class="trust-text"><strong>Leite de Fazendas Locais</strong><span>Laticínios frescos todos os dias</span></div></div>
-        <div class="trust-item"><div class="trust-icon">🍓</div><div class="trust-text"><strong>Frutas da Estação</strong><span>Selecionadas no ponto perfeito</span></div></div>
-        <div class="trust-item"><div class="trust-icon">🇮🇹</div><div class="trust-text"><strong>Receita Italiana</strong><span>Método tradicional slow churn</span></div></div>
-        <div class="trust-item"><div class="trust-icon">📦</div><div class="trust-text"><strong>Entrega Gelada</strong><span>Embalagem térmica que mantém -20°C</span></div></div>
+        <div class="trust-item"><div class="trust-icon">🎓</div><div class="trust-text"><strong>Certificado Incluso</strong><span>Reconhecido pelo mercado</span></div></div>
+        <div class="trust-item"><div class="trust-icon">📱</div><div class="trust-text"><strong>100% Online</strong><span>Estude no seu ritmo</span></div></div>
+        <div class="trust-item"><div class="trust-icon">👨‍🍳</div><div class="trust-text"><strong>Mentoria ao Vivo</strong><span>Tire dúvidas com chefs</span></div></div>
+        <div class="trust-item"><div class="trust-icon">🥄</div><div class="trust-text"><strong>Receitas Exclusivas</strong><span>Segredos da gelateria artesanal</span></div></div>
     </section>
 
-    <!-- MENU -->
-    <section id="menu-section">
-        <h2 class="section-title">Explore Nossa Coleção de Sabores</h2>
-        <div class="section-underline"><span></span><span class="spoon-icon">🥄</span><span></span></div>
+    <section id="programa">
+        <h2 class="section-title">O Que Você Vai Aprender</h2>
+        <div class="section-underline"><span></span><span class="spoon-icon">🍨</span><span></span></div>
         <div class="tab-nav">
-            <button class="tab-btn active" data-tab="classicos">Clássicos</button>
-            <button class="tab-btn" data-tab="frutados">Frutados</button>
+            <button class="tab-btn active" data-tab="bases">Bases e Cremes</button>
+            <button class="tab-btn" data-tab="sorbets">Sorbets & Frutas</button>
             <button class="tab-btn" data-tab="especiais">Edições Especiais</button>
         </div>
-        <div class="product-grid" id="product-grid"></div>
+        <div class="product-grid" id="modulos-grid"></div>
     </section>
 
-    <!-- ASSINATURA -->
-    <section id="assinatura">
-        <h2 class="section-title">Clube do Gelato</h2>
-        <div class="section-underline"><span></span><span class="spoon-icon">🍨</span><span></span></div>
-        <div class="toggle-plan">
-            <span>Mensal</span>
-            <div class="toggle-switch" id="plan-toggle" onclick="togglePlan()"></div>
-            <span>Trimestral <small>(economize 20%)</small></span>
-        </div>
-        <div class="plan-grid" id="plan-grid"></div>
-        <p style="text-align:center;margin-top:20px;color:var(--text-gray);">🔒 Cancele quando quiser, sem taxas.</p>
-    </section>
-
-    <!-- COMO FUNCIONA -->
-    <section id="como-funciona">
-        <h2 class="section-title">O Processo Mágico</h2>
+    <section id="como-funciona" style="padding:80px 40px;background:var(--bg);">
+        <h2 class="section-title">Como Funciona o Curso</h2>
         <div class="section-underline"><span></span><span class="spoon-icon">✨</span><span></span></div>
-        <div class="steps-line">
-            <div class="step"><div class="step-icon">📱</div><h4>Você Escolhe</h4><p>Selecione seus sabores favoritos e personalize a entrega.</p></div>
-            <div class="step"><div class="step-icon">🍯</div><h4>Produzimos Artesanalmente</h4><p>Em até 12h, com ingredientes frescos.</p></div>
-            <div class="step"><div class="step-icon">❄️</div><h4>Congelamento Rápido</h4><p>Embalagem térmica que mantém a textura perfeita.</p></div>
-            <div class="step"><div class="step-icon">🛵</div><h4>Na Sua Porta em 90 Min</h4><p>Entregador uniformizado, veículo refrigerado.</p></div>
+        <div class="steps-line" style="display:flex;gap:30px;max-width:1000px;margin:0 auto;flex-wrap:wrap;justify-content:center;">
+            <div class="step" style="flex:1 1 200px;text-align:center;"><div class="step-icon">📝</div><h4>1. Você se Inscreve</h4><p>Escolha seu plano e ganhe acesso imediato.</p></div>
+            <div class="step" style="flex:1 1 200px;text-align:center;"><div class="step-icon">🎥</div><h4>2. Aulas Gravadas</h4><p>Mais de 20 horas de conteúdo prático.</p></div>
+            <div class="step" style="flex:1 1 200px;text-align:center;"><div class="step-icon">👥</div><h4>3. Workshops ao Vivo</h4><p>3 encontros para tirar dúvidas e praticar.</p></div>
+            <div class="step" style="flex:1 1 200px;text-align:center;"><div class="step-icon">🏅</div><h4>4. Certificado</h4><p>Conclua e receba seu certificado digital.</p></div>
         </div>
     </section>
 
-    <!-- WALL OF LOVE -->
-    <section id="wall-of-love">
-        <h2 class="section-title">Wall of Love</h2>
+    <section id="wall-of-love" style="padding:80px 40px;background:#fffefb;">
+        <h2 class="section-title">Alunos que já transformaram sua paixão</h2>
         <div class="section-underline"><span></span><span class="spoon-icon">💛</span><span></span></div>
-        <div class="masonry-grid">
-            <div class="masonry-item">🍦<div class="overlay-text">"Melhor sorvete da vida!"</div></div>
-            <div class="masonry-item">🍫<div class="overlay-text">"Chocolate belga incrível."</div></div>
-            <div class="masonry-item">🥭<div class="overlay-text">"Manga intensa, parece fruta pura."</div></div>
-            <div class="masonry-item">👧<div class="overlay-text">"Minha filha ama!"</div></div>
-        </div>
-        <div class="testimonial-carousel">
-            <div class="testimonial-card"><p class="quote">"Nunca provei um sorvete de manga tão intenso! É como morder a fruta."</p><p class="author">Ana Clara, ★★★★★</p></div>
-            <div class="testimonial-card"><p class="quote">"Entrega super rápida e o sabor é surreal. Virei assinante!"</p><p class="author">Rafael M., ★★★★★</p></div>
-            <div class="testimonial-card"><p class="quote">"O pistache da Sicília me transportou pra Itália. Magnífico."</p><p class="author">Helena S., ★★★★★</p></div>
-        </div>
-        <p style="text-align:center;margin-top:20px;color:var(--text-gray);">Siga <strong>@gelato.artesanal</strong> e marque a gente!</p>
-    </section>
-
-    <!-- NOSSA HISTORIA -->
-    <section id="nossa-historia">
-        <div class="historia-img">👨‍🍳🍓</div>
-        <div class="historia-text">
-            <h3>Da feira livre para a sua mesa</h3>
-            <p>Começamos em 2018 com uma pequena máquina e a obsessão por resgatar o <strong>sabor real das frutas</strong>. Hoje, cada pote carrega <strong>ingredientes que você consegue pronunciar</strong> — e um sabor que você jamais esquece.</p>
-            <p>🏅 Produto Natural · 🌱 Livre de Transgênicos · 👩‍🌾 Apoiamos pequenos produtores</p>
+        <div class="testimonial-carousel" style="display:flex;gap:20px;overflow-x:auto;max-width:1000px;margin:0 auto;padding:10px 0;">
+            <div class="testimonial-card" style="min-width:280px;background:#fff;border-radius:28px;padding:24px;box-shadow:var(--shadow-sm);"><p>"Agora faço sorvetes melhores que os da sorveteria! O curso mudou minha vida."</p><strong>Mariana L.</strong> ⭐⭐⭐⭐⭐</div>
+            <div class="testimonial-card" style="min-width:280px;background:#fff;border-radius:28px;padding:24px;box-shadow:var(--shadow-sm);"><p>"As técnicas de gelato italiano são incríveis. Já estou vendendo para amigos."</p><strong>Carlos E.</strong> ⭐⭐⭐⭐⭐</div>
+            <div class="testimonial-card" style="min-width:280px;background:#fff;border-radius:28px;padding:24px;box-shadow:var(--shadow-sm);"><p>"O suporte dos chefs é sensacional. Recomendo demais!"</p><strong>Ana J.</strong> ⭐⭐⭐⭐⭐</div>
         </div>
     </section>
 
-    <!-- FAQ -->
-    <section id="faq">
+    <section id="nossa-historia" style="padding:80px 40px;background:var(--bg);display:flex;gap:40px;max-width:1100px;margin:0 auto;flex-wrap:wrap;align-items:center;">
+        <div style="flex:1 1 300px;aspect-ratio:1/1;background:#f5e6d8;border-radius:28px;display:flex;align-items:center;justify-content:center;font-size:8rem;transform:rotate(-3deg);border:6px solid #fff;">👨‍🍳🍓</div>
+        <div style="flex:1 1 300px;">
+            <h3 style="font-family:var(--font-title);font-size:2rem;color:var(--secondary);">Da paixão ao conhecimento</h3>
+            <p>Começamos em 2018 compartilhando receitas caseiras. Hoje já formamos mais de <strong>2.000 alunos</strong> que transformaram a arte do sorvete em profissão ou prazer. Nossa missão é democratizar o gelato de verdade.</p>
+        </div>
+    </section>
+
+    <section id="faq" style="padding:80px 40px;background:#fffefb;max-width:800px;margin:0 auto;">
         <h2 class="section-title">Perguntas Frequentes</h2>
         <div class="section-underline"><span></span><span class="spoon-icon">❓</span><span></span></div>
-        <div class="faq-item"><div class="faq-question"><span>🍦 Como o sorvete chega sem derreter?</span><span class="faq-icon">+</span></div><div class="faq-answer">Usamos embalagem térmica de última geração com gelo seco, que mantém -20°C por até 4 horas. Seu sorvete chega perfeito!</div></div>
-        <div class="faq-item"><div class="faq-question"><span>📍 Vocês entregam em qual região?</span><span class="faq-icon">+</span></div><div class="faq-answer">Atendemos toda a região metropolitana em até 90 minutos. Consulte seu CEP no checkout.</div></div>
-        <div class="faq-item"><div class="faq-question"><span>🔄 Posso trocar sabores na assinatura?</span><span class="faq-icon">+</span></div><div class="faq-answer">Sim! Você pode alterar seus sabores até 24h antes da próxima entrega, direto no seu painel.</div></div>
-        <div class="faq-item"><div class="faq-question"><span>♻️ Os potes são recicláveis?</span><span class="faq-icon">+</span></div><div class="faq-answer">Nossos potes são biodegradáveis e ainda temos um programa de devolução com descontos na próxima compra.</div></div>
-    </section>
-
-    <!-- NEWSLETTER -->
-    <section id="newsletter">
-        <h3>Quer um desconto irresistível?</h3>
-        <p>Participe da nossa lista VIP e receba receitas, lançamentos e um cupom de <strong>15% off</strong> agora.</p>
-        <div class="newsletter-form">
-            <input type="email" placeholder="Digite seu melhor e-mail" id="news-email">
-            <button onclick="showCoupon()">Quero meu Cupom!</button>
+        <div class="faq-item" style="border-bottom:1px solid #e8ddd3;padding:16px 0;cursor:pointer;" onclick="this.classList.toggle('open')">
+            <div style="display:flex;justify-content:space-between;"><span>🍦 Preciso ter experiência?</span><span>+</span></div>
+            <div style="max-height:0;overflow:hidden;transition:0.3s;">Não! O curso é do zero, ideal para iniciantes e também para quem já empreende.</div>
         </div>
-        <div id="coupon-display" style="margin-top:14px;font-weight:700;font-size:1.1rem;"></div>
+        <div class="faq-item" style="border-bottom:1px solid #e8ddd3;padding:16px 0;cursor:pointer;" onclick="this.classList.toggle('open')">
+            <div style="display:flex;justify-content:space-between;"><span>🎓 Tem certificado?</span><span>+</span></div>
+            <div style="max-height:0;overflow:hidden;transition:0.3s;">Sim, certificado digital reconhecido em todo o Brasil.</div>
+        </div>
+        <div class="faq-item" style="border-bottom:1px solid #e8ddd3;padding:16px 0;cursor:pointer;" onclick="this.classList.toggle('open')">
+            <div style="display:flex;justify-content:space-between;"><span>⏳ Por quanto tempo tenho acesso?</span><span>+</span></div>
+            <div style="max-height:0;overflow:hidden;transition:0.3s;">Acesso vitalício! Estude no seu tempo.</div>
+        </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer id="site-footer">
-        <div><h4>🍦 GELATÒ</h4><p>Rua do Sabor, 123<br>Sorvetópolis - SP<br>📞 (11) 99999-0000<br>✉️ oi@gelato.artesanal</p></div>
-        <div><h4>Mapa do Site</h4><a href="#hero">Início</a><a href="#menu-section">Sabores</a><a href="#assinatura">Assinar</a><a href="#nossa-historia">Nossa História</a></div>
-        <div><h4>Ajuda</h4><a href="#faq">FAQ</a><a href="#">Política de Entrega</a><a href="#">Termos</a><a href="#">Trocas</a></div>
-        <div><h4>Redes Sociais</h4><a href="#">📸 Instagram</a><a href="#">📘 Facebook</a><a href="#">🎵 TikTok</a></div>
-    </footer>
-    <div class="footer-bottom">© 2025 Gelatò. Feito com muito leite, frutas e amor 🍦 Todos os direitos reservados.</div>
+    <section id="assinatura">
+        <h2 class="section-title">Escolha seu Plano</h2>
+        <div class="section-underline"><span></span><span class="spoon-icon">🎯</span><span></span></div>
+        <div class="plan-grid" id="plan-grid"></div>
+        <p style="text-align:center;margin-top:20px;">🔒 Garantia de 7 dias ou seu dinheiro de volta.</p>
+    </section>
 
-    <!-- URGENCY BAR -->
-    <div id="urgency-bar">
-        <span>🔥 Pedidos para entrega hoje: restam apenas <strong id="boxes-left">12</strong> caixas térmicas.</span>
-        <span id="countdown">⏳ 03:42:15</span>
-        <button class="urgency-cta">Garantir Agora</button>
-        <button class="close-urgency" onclick="hideUrgency()">✕</button>
+    <section id="newsletter" style="padding:80px 40px;background:linear-gradient(135deg,#FF6B4A,#c0392b);text-align:center;color:#fff;clip-path:ellipse(120% 100% at 50% 0%);">
+        <h3 style="font-family:var(--font-title);font-size:2rem;">Ganhe uma aula grátis!</h3>
+        <p>Cadastre-se e receba uma aula completa de sorvete de pistache.</p>
+        <div style="display:flex;gap:10px;max-width:500px;margin:0 auto;flex-wrap:wrap;justify-content:center;">
+            <input type="email" placeholder="Seu melhor e-mail" style="flex:1 1 250px;padding:14px 20px;border-radius:50px;border:2px solid #fff;background:rgba(255,255,255,0.2);color:#fff;" id="news-email">
+            <button onclick="document.getElementById('coupon-display').innerText='Aula enviada! 🎉'" style="padding:14px 28px;border-radius:50px;border:none;background:#fff;color:#FF6B4A;font-weight:700;">Quero minha aula</button>
+        </div>
+        <div id="coupon-display" style="margin-top:14px;font-weight:700;"></div>
+    </section>
+
+    <div id="urgency-bar" style="position:fixed;bottom:0;left:0;right:0;background:#3E2723;color:#FFF9F0;padding:12px 24px;z-index:999;display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;transform:translateY(100%);transition:0.5s;" id="urgency-bar">
+        <span>🔥 Vagas limitadas para a próxima turma ao vivo!</span>
+        <button class="urgency-cta" style="background:#FF6B4A;color:#fff;border:none;padding:9px 20px;border-radius:50px;font-weight:700;animation:pulse 1.8s infinite;">Garantir Vaga</button>
+        <button onclick="this.parentElement.style.transform='translateY(100%)'" style="background:none;border:none;color:#fff;font-size:1.3rem;">✕</button>
     </div>
 
-    <!-- BACK TO TOP -->
-    <button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Voltar ao topo">🥄</button>
+    <footer id="site-footer">
+        <div><h4>🍦 GELATÒ</h4><p>CNPJ: 57.645.373/0001-37<br>ML SORVETES LTDA - ME</p></div>
+        <div><h4>Mapa do Site</h4><a href="#hero">Início</a><a href="#programa">Programa</a><a href="#assinatura">Planos</a></div>
+        <div><h4>Legal</h4><a href="privacidade.html">Política de Privacidade</a><a href="reembolso.html">Política de Reembolso</a><a href="termos.html">Termos de Uso</a><a href="aviso.html">Aviso Legal</a><a href="entrega.html">Política de Entrega</a></div>
+        <div><h4>Redes Sociais</h4><a href="#">📸 Instagram</a><a href="#">📘 Facebook</a></div>
+    </footer>
+    <div class="footer-bottom">© 2025 Gelatò. Todos os direitos reservados. 🍦</div>
+
+    <button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" style="position:fixed;bottom:30px;right:30px;width:48px;height:48px;border-radius:50%;background:#FF6B4A;color:#fff;border:none;font-size:1.4rem;cursor:pointer;z-index:998;opacity:0;pointer-events:none;transition:0.3s;">🥄</button>
 
     <script>
-        // PRELOADER
-        (function() {
-            const textEl = document.getElementById('preloader-text');
-            const phrase = 'Preparando a felicidade…';
-            let i = 0;
-
-            function type() {
-                if (i < phrase.length) {
-                    textEl.innerHTML = phrase.substring(0, i + 1) +
-                        '<span class="cursor-blink"></span>';
-                    i++;
-                    setTimeout(type, 60 + Math.random() * 40);
-                } else {
-                    textEl.innerHTML = phrase + '<span class="cursor-blink"></span>';
-                }
-            }
-            setTimeout(type, 300);
-            setTimeout(() => {
-                document.getElementById('preloader').classList.add('hidden');
-                setTimeout(() => {
-                    const p = document.getElementById('preloader');
-                    if (p) p.style.display = 'none';
-                }, 800);
-            }, 2500);
-        })();
-
-        // HEADER SCROLL
         const header = document.getElementById('site-header');
-        let lastScrollY = 0;
         window.addEventListener('scroll', () => {
-            const scrollY = window.scrollY;
-            if (scrollY > 60) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-            lastScrollY = scrollY;
+            header.classList.toggle('scrolled', window.scrollY > 60);
+            const btn = document.getElementById('back-to-top');
+            if (window.scrollY > 500) { btn.style.opacity = '1'; btn.style.pointerEvents = 'auto'; } else { btn.style.opacity = '0'; btn.style.pointerEvents = 'none'; }
+            if (window.scrollY > window.innerHeight * 0.6) document.getElementById('urgency-bar').style.transform = 'translateY(0)';
         });
 
-        // URGENCY BAR
-        const urgencyBar = document.getElementById('urgency-bar');
-        let urgencyHidden = false;
-
-        function showUrgency() {
-            if (!urgencyHidden && window.scrollY > window.innerHeight * 0.6) {
-                urgencyBar.classList.add('visible');
-            }
-        }
-
-        function hideUrgency() {
-            urgencyBar.classList.remove('visible');
-            urgencyHidden = true;
-        }
-        window.addEventListener('scroll', showUrgency);
-
-        // COUNTDOWN
-        function updateCountdown() {
-            const now = new Date();
-            const target = new Date(now);
-            target.setHours(20, 0, 0, 0);
-            if (now > target) target.setDate(target.getDate() + 1);
-            const diff = target - now;
-            const h = Math.floor(diff / 3600000);
-            const m = Math.floor((diff % 3600000) / 60000);
-            const s = Math.floor((diff % 60000) / 1000);
-            document.getElementById('countdown').textContent =
-                `⏳ ${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
-        }
-        setInterval(updateCountdown, 1000);
-        updateCountdown();
-
-        // BOXES LEFT random
-        document.getElementById('boxes-left').textContent = Math.floor(Math.random() * 15) + 3;
-
-        // PRODUCTS
-        const products = {
-            classicos: [
-                { name: 'Pistacchio della Sicilia', desc: 'Pistache italiano tostado com lascas de chocolate branco.',
-                    price: 32, emoji: '🍦💚', bestseller: true },
-                { name: 'Baunilha de Madagascar', desc: 'Fava de baunilha verdadeira, cremosidade inigualável.',
-                    price: 28, emoji: '🍦🤍', bestseller: false },
-                { name: 'Chocolate Belga Intenso', desc: '70% cacau com ganache escorrendo.', price: 34,
-                    emoji: '🍫🖤', bestseller: true },
+        const modulos = {
+            bases: [
+                { nome: 'Base Branca Cremosa', desc: 'Fior di latte, crema e variações.', emoji: '🍨' },
+                { nome: 'Base de Chocolate', desc: 'Chocolate belga e cacau intenso.', emoji: '🍫' },
+                { nome: 'Gelato de Baunilha', desc: 'Fava de baunilha verdadeira.', emoji: '🤍' },
             ],
-            frutados: [
-                { name: 'Manga Palmer Surreal', desc: 'Manga fresca batida com toque de limão siciliano.', price: 30,
-                    emoji: '🥭🧡', bestseller: false },
-                { name: 'Morango Orgânico', desc: 'Direto da fazenda, pedaços generosos.', price: 29, emoji: '🍓❤️',
-                    bestseller: true },
-                { name: 'Maracujá da Caatinga', desc: 'Azedinho na medida, refrescante.', price: 27, emoji: '🍋💛',
-                    bestseller: false },
+            sorbets: [
+                { nome: 'Sorbet de Manga', desc: 'Técnica para frutas tropicais.', emoji: '🥭' },
+                { nome: 'Sorbet de Frutas Vermelhas', desc: 'Mix de berries e equilíbrio.', emoji: '🍓' },
+                { nome: 'Sorbet Cítrico', desc: 'Limão siciliano e maracujá.', emoji: '🍋' },
             ],
             especiais: [
-                { name: 'Tiramisù Gelato', desc: 'Mascarpone, café espresso e cacau.', price: 38, emoji: '☕🤎',
-                    bestseller: true },
-                { name: 'Doce de Leite com Nozes', desc: 'Doce de leite argentino, nozes caramelizadas.', price: 36,
-                    emoji: '🥜🍯', bestseller: false },
-                { name: 'Frutas Vermelhas & Champagne', desc: 'Edição limitada, sofisticado.', price: 42,
-                    emoji: '🍾💜', bestseller: true },
+                { nome: 'Tiramisù Gelato', desc: 'Mascarpone e café espresso.', emoji: '☕' },
+                { nome: 'Doce de Leite com Nozes', desc: 'Caramelo e crocância.', emoji: '🥜' },
+                { nome: 'Gelato de Pistache', desc: 'Pistache italiano puro.', emoji: '💚' },
             ]
         };
-        let activeTab = 'classicos';
-        let cartCount = 0;
-
-        function renderProducts(tab) {
-            const grid = document.getElementById('product-grid');
-            grid.innerHTML = '';
-            products[tab].forEach(p => {
-                const card = document.createElement('div');
-                card.className = 'product-card';
-                card.innerHTML = `
-                    ${p.bestseller ? '<span class="badge-bestseller">Bestseller ❤️</span>' : ''}
-                    <div class="product-img">${p.emoji}</div>
-                    <div class="product-name">${p.name}</div>
-                    <div class="product-desc">${p.desc}</div>
-                    <div class="size-selector">
-                        <span class="size-pill selected" data-size="300ml">300ml</span>
-                        <span class="size-pill" data-size="500ml">500ml</span>
-                        <span class="size-pill" data-size="1L">Família 1L</span>
-                    </div>
-                    <div class="product-price">R$ ${p.price.toFixed(2).replace('.',',')}</div>
-                    <button class="btn-add-cart" onclick="addToCart(event, '${p.name}')">🧊 Adicionar à Caixa</button>
-                `;
-                grid.appendChild(card);
-            });
-            attachSizeListeners();
+        const grid = document.getElementById('modulos-grid');
+        let activeTab = 'bases';
+        function renderModulos(tab) {
+            grid.innerHTML = modulos[tab].map(m => `
+                <div class="product-card">
+                    <div class="product-img">${m.emoji}</div>
+                    <div class="product-name">${m.nome}</div>
+                    <div class="product-desc">${m.desc}</div>
+                </div>
+            `).join('');
         }
+        renderModulos('bases');
+        document.querySelectorAll('.tab-btn').forEach(b => b.addEventListener('click', function() {
+            document.querySelectorAll('.tab-btn').forEach(x => x.classList.remove('active'));
+            this.classList.add('active');
+            activeTab = this.dataset.tab;
+            renderModulos(activeTab);
+        }));
 
-        function attachSizeListeners() {
-            document.querySelectorAll('.size-pill').forEach(pill => {
-                pill.addEventListener('click', function() {
-                    this.parentElement.querySelectorAll('.size-pill').forEach(p => p.classList
-                        .remove('selected'));
-                    this.classList.add('selected');
-                });
-            });
-        }
-        renderProducts('classicos');
+        const plans = [
+            { nome: 'Curso Essencial', preco: 297, original: 497, beneficios: ['Aulas gravadas', 'Certificado', 'Suporte 30 dias'], icon: '📘' },
+            { nome: 'Curso Completo', preco: 597, original: 997, beneficios: ['Tudo do Essencial', '+3 Workshops ao vivo', 'Grupo exclusivo'], icon: '🎓', featured: true },
+            { nome: 'Master com Mentoria', preco: 997, original: 1997, beneficios: ['Tudo do Completo', 'Mentoria individual', 'Receitas vitalícias'], icon: '👑' },
+        ];
+        document.getElementById('plan-grid').innerHTML = plans.map(p => `
+            <div class="plan-card${p.featured ? ' featured' : ''}">
+                ${p.featured ? '<span class="popular-badge">Mais Popular</span>' : ''}
+                <div style="font-size:3rem;">${p.icon}</div>
+                <h3>${p.nome}</h3>
+                <ul style="list-style:none;text-align:left;margin:16px 0;">${p.beneficios.map(b => '<li>✅ '+b+'</li>').join('')}</ul>
+                <div class="plan-price">R$ ${p.preco.toFixed(2).replace('.',',')}<small style="text-decoration:line-through;color:#b0a49a;">R$ ${p.original.toFixed(2).replace('.',',')}</small></div>
+                <button class="btn-plan" onclick="alert('Plano ${p.nome} selecionado!')">Inscrever-se</button>
+            </div>
+        `).join('');
 
-        document.querySelectorAll('.tab-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove(
-                    'active'));
-                this.classList.add('active');
-                activeTab = this.dataset.tab;
-                renderProducts(activeTab);
-            });
-        });
-
-        function addToCart(event, name) {
-            cartCount++;
-            document.getElementById('cart-count-display').textContent = cartCount;
-            const badge = document.getElementById('cart-count-display');
-            badge.classList.add('bump');
-            setTimeout(() => badge.classList.remove('bump'), 400);
-            // mini confetti
-            const btn = event.target;
-            const rect = btn.getBoundingClientRect();
-            for (let i = 0; i < 12; i++) {
-                const spark = document.createElement('span');
-                spark.textContent = ['🎉', '✨', '💫', '🌟'][Math.floor(Math.random() * 4)];
-                spark.style.cssText = `
-                    position:fixed;z-index:9999;pointer-events:none;
-                    left:${rect.left + rect.width/2}px;top:${rect.top}px;
-                    font-size:1.2rem;transition:all 0.8s ease-out;opacity:1;
-                `;
-                document.body.appendChild(spark);
-                const angle = Math.random() * Math.PI * 2;
-                const dist = 60 + Math.random() * 80;
-                requestAnimationFrame(() => {
-                    spark.style.transform =
-                        `translate(${Math.cos(angle)*dist}px,${Math.sin(angle)*dist - 40}px) scale(0)`;
-                    spark.style.opacity = '0';
-                });
-                setTimeout(() => spark.remove(), 900);
-            }
-        }
-
-        function bumpCart() {
-            const badge = document.getElementById('cart-count-display');
-            badge.classList.add('bump');
-            setTimeout(() => badge.classList.remove('bump'), 400);
-        }
-
-        // PLANOS
-        let planTrimestral = false;
-
-        function togglePlan() {
-            planTrimestral = !planTrimestral;
-            document.getElementById('plan-toggle').classList.toggle('active', planTrimestral);
-            renderPlans();
-        }
-
-        function renderPlans() {
-            const grid = document.getElementById('plan-grid');
-            const plans = [
-                { name: 'Essencial', potes: 6, price: 129, original: 179, icon: '📦', benefits: [
-                        'Frete grátis', 'Pote bônus sazonal', 'Acesso antecipado' ] },
-                { name: 'Degustador', potes: 10, price: 199, original: 279, icon: '🎁', benefits: [
-                        'Frete grátis', '2 potes bônus', 'Acesso antecipado', 'Toppings grátis' ],
-                    featured: true },
-                { name: 'Família Feliz', potes: 20, price: 349, original: 499, icon: '👨‍👩‍👧‍👦', benefits: [
-                        'Frete grátis', '4 potes bônus', 'Acesso antecipado', 'Toppings grátis',
-                        'Entrega prioritária'
-                    ] },
-            ];
-            grid.innerHTML = '';
-            plans.forEach(p => {
-                const finalPrice = planTrimestral ? Math.round(p.price * 0.8) : p.price;
-                const card = document.createElement('div');
-                card.className = 'plan-card' + (p.featured ? ' featured' : '');
-                card.innerHTML = `
-                    ${p.featured ? '<span class="popular-badge">Mais Popular</span>' : ''}
-                    <div class="plan-icon">${p.icon}</div>
-                    <div class="plan-name">${p.name} (${p.potes} potes/mês)</div>
-                    <ul class="plan-benefits">${p.benefits.map(b=>'<li>✅ '+b+'</li>').join('')}</ul>
-                    <div class="plan-price">R$ ${finalPrice.toFixed(2).replace('.',',')}<span class="old-price">R$ ${p.original.toFixed(2).replace('.',',')}</span></div>
-                    <button class="btn-plan" onclick="alert('Plano ${p.name} adicionado! 🎉')">Assinar com Desconto</button>
-                `;
-                grid.appendChild(card);
-            });
-        }
-        renderPlans();
-
-        // FAQ
         document.querySelectorAll('.faq-item').forEach(item => {
             item.addEventListener('click', function() {
-                const wasOpen = this.classList.contains('open');
-                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove(
-                'open'));
-                if (!wasOpen) this.classList.add('open');
-            });
-        });
-
-        // INTERSECTION OBSERVER for steps
-        const stepObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
+                const answer = this.querySelector('div:last-child');
+                if (this.classList.contains('open')) {
+                    this.classList.remove('open');
+                    answer.style.maxHeight = '0';
+                } else {
+                    this.classList.add('open');
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
                 }
             });
-        }, { threshold: 0.3 });
-        document.querySelectorAll('.step').forEach(s => stepObserver.observe(s));
-
-        // BACK TO TOP
-        const backBtn = document.getElementById('back-to-top');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 500) {
-                backBtn.classList.add('visible');
-            } else {
-                backBtn.classList.remove('visible');
-            }
         });
-
-        // COUPON
-        function showCoupon() {
-            const email = document.getElementById('news-email').value;
-            if (email.includes('@') && email.includes('.')) {
-                document.getElementById('coupon-display').innerHTML =
-                    '🎉 Cupom: <strong>GELATO15</strong> — 15% off na primeira caixa!';
-            } else {
-                document.getElementById('coupon-display').innerHTML = 'Por favor, insira um e-mail válido 😊';
-            }
-        }
-
-        // EASTER EGG - 5 clicks no logo
-        let logoClicks = 0;
-        document.querySelector('.logo').addEventListener('click', function(e) {
-            logoClicks++;
-            if (logoClicks >= 5) {
-                logoClicks = 0;
-                for (let i = 0; i < 50; i++) {
-                    const sprinkle = document.createElement('span');
-                    sprinkle.textContent = ['🌈', '🍬', '✨', '💖', '⭐'][Math.floor(Math.random() * 5)];
-                    sprinkle.style.cssText = `
-                        position:fixed;z-index:99999;pointer-events:none;
-                        left:${Math.random()*100}vw;top:-30px;
-                        font-size:${1+Math.random()*2}rem;
-                        animation: sprinkleFall ${2+Math.random()*3}s ease-in forwards;
-                    `;
-                    document.body.appendChild(sprinkle);
-                    setTimeout(() => sprinkle.remove(), 4000);
-                }
-            }
-        });
-        // sprinkleFall keyframes via style
-        const sprinkleStyle = document.createElement('style');
-        sprinkleStyle.textContent =
-            `@keyframes sprinkleFall{0%{transform:translateY(0) rotate(0deg);opacity:1;}100%{transform:translateY(105vh) rotate(720deg);opacity:0;}}`;
-        document.head.appendChild(sprinkleStyle);
-
-        // SMOOTH PARALLAX for hero icecream
-        window.addEventListener('scroll', () => {
-            const heroRight = document.querySelector('.hero-icecream');
-            if (heroRight && window.innerWidth > 600) {
-                const scrollY = window.scrollY;
-                const heroSection = document.getElementById('hero');
-                const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
-                if (scrollY < heroBottom) {
-                    heroRight.style.transform = `translateY(${scrollY * 0.08}px)`;
-                }
-            }
-        });
-
-        console.log('🍦 GELATÒ — Gourmet Lúdico pronto para encantar!');
-        console.log('Dica: clique 5 vezes no logo para uma surpresa 🌈');
     </script>
 </body>
 </html>
