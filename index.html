@@ -689,7 +689,7 @@
         </ul>
         <div class="header-actions">
             <button class="user-icon" title="Área do Aluno">👤</button>
-            <a href="#assinatura" class="header-cta">Inscreva-se</a>
+            <a href="https://wa.me/5519981909667?text=Ol%C3%A1%21+Tenho+interesse+no+curso+de+sorvete+artesanal." class="header-cta">Inscreva-se</a>
             <button class="hamburger">☰</button>
         </div>
     </header>
@@ -700,7 +700,7 @@
             <h1 class="hero-title">Aprenda a fazer sorvete que <span class="highlight">derrete</span> corações.</h1>
             <p class="hero-subtitle">Do zero ao pote: técnicas italianas, ingredientes naturais e os segredos dos mestres. Aulas gravadas + 3 workshops ao vivo.</p>
             <div class="hero-buttons">
-                <a href="#assinatura" class="btn-primary">Quero me Inscrever</a>
+                <a href="https://wa.me/5519981909667?text=Ol%C3%A1%21+Quero+me+inscrever+no+curso+de+sorvete+artesanal." class="btn-primary">Quero me Inscrever</a>
                 <a href="#programa" class="btn-outline">Ver Programa Completo</a>
             </div>
             <div class="social-proof">
@@ -807,12 +807,6 @@
         <div id="coupon-display" style="margin-top:14px;font-weight:700;"></div>
     </section>
 
-    <div id="urgency-bar" style="position:fixed;bottom:0;left:0;right:0;background:#3E2723;color:#FFF9F0;padding:12px 24px;z-index:999;display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;transform:translateY(100%);transition:0.5s;" id="urgency-bar">
-        <span>🔥 Vagas limitadas para a próxima turma ao vivo!</span>
-        <button class="urgency-cta" style="background:#FF6B4A;color:#fff;border:none;padding:9px 20px;border-radius:50px;font-weight:700;animation:pulse 1.8s infinite;">Garantir Vaga</button>
-        <button onclick="this.parentElement.style.transform='translateY(100%)'" style="background:none;border:none;color:#fff;font-size:1.3rem;">✕</button>
-    </div>
-
     <footer id="site-footer">
         <div><h4>🍦 GELATÒ</h4><p>CNPJ: 57.645.373/0001-37<br>ML SORVETES LTDA - ME</p></div>
         <div><h4>Mapa do Site</h4><a href="#hero">Início</a><a href="#programa">Programa</a><a href="#assinatura">Planos</a></div>
@@ -829,7 +823,6 @@
             header.classList.toggle('scrolled', window.scrollY > 60);
             const btn = document.getElementById('back-to-top');
             if (window.scrollY > 500) { btn.style.opacity = '1'; btn.style.pointerEvents = 'auto'; } else { btn.style.opacity = '0'; btn.style.pointerEvents = 'none'; }
-            if (window.scrollY > window.innerHeight * 0.6) document.getElementById('urgency-bar').style.transform = 'translateY(0)';
         });
 
         const modulos = {
@@ -873,16 +866,20 @@
             { nome: 'Curso Completo', preco: 597, original: 997, beneficios: ['Tudo do Essencial', '+3 Workshops ao vivo', 'Grupo exclusivo'], icon: '🎓', featured: true },
             { nome: 'Master com Mentoria', preco: 997, original: 1997, beneficios: ['Tudo do Completo', 'Mentoria individual', 'Receitas vitalícias'], icon: '👑' },
         ];
-        document.getElementById('plan-grid').innerHTML = plans.map(p => `
-            <div class="plan-card${p.featured ? ' featured' : ''}">
-                ${p.featured ? '<span class="popular-badge">Mais Popular</span>' : ''}
-                <div style="font-size:3rem;">${p.icon}</div>
-                <h3>${p.nome}</h3>
-                <ul style="list-style:none;text-align:left;margin:16px 0;">${p.beneficios.map(b => '<li>✅ '+b+'</li>').join('')}</ul>
-                <div class="plan-price">R$ ${p.preco.toFixed(2).replace('.',',')}<small style="text-decoration:line-through;color:#b0a49a;">R$ ${p.original.toFixed(2).replace('.',',')}</small></div>
-                <button class="btn-plan" onclick="alert('Plano ${p.nome} selecionado!')">Inscrever-se</button>
-            </div>
-        `).join('');
+        document.getElementById('plan-grid').innerHTML = plans.map(p => {
+            const mensagem = `Olá! Quero me inscrever no ${p.nome} de Sorvete Artesanal.`;
+            const url = `https://wa.me/5519981909667?text=${encodeURIComponent(mensagem)}`;
+            return `
+                <div class="plan-card${p.featured ? ' featured' : ''}">
+                    ${p.featured ? '<span class="popular-badge">Mais Popular</span>' : ''}
+                    <div style="font-size:3rem;">${p.icon}</div>
+                    <h3>${p.nome}</h3>
+                    <ul style="list-style:none;text-align:left;margin:16px 0;">${p.beneficios.map(b => '<li>✅ '+b+'</li>').join('')}</ul>
+                    <div class="plan-price">R$ ${p.preco.toFixed(2).replace('.',',')}<small style="text-decoration:line-through;color:#b0a49a;">R$ ${p.original.toFixed(2).replace('.',',')}</small></div>
+                    <button class="btn-plan" onclick="window.location.href='${url}'">Inscrever-se</button>
+                </div>
+            `;
+        }).join('');
 
         document.querySelectorAll('.faq-item').forEach(item => {
             item.addEventListener('click', function() {
